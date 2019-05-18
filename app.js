@@ -13,7 +13,7 @@ models = require('./models')
 app.get('/api/getData', (req, res) => {
   models.NpReport.findAll().then(result => {
   res.json({success: true, message:"Data is being populated...", result: result})
-}).catch(error => res.json({success: false, message:"ERROR: Data could not be populated..."}))
+}).catch(error => res.json({success: false, message:"ERROR: Data could not be populated...", error: error}))
 })
 
 
