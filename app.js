@@ -9,7 +9,9 @@ app.use(bodyParser.json())
 
 models = require('./models')
 
-
+app.get('/', (req,res) => {
+  res.send("Hello")
+})
 app.get('/api/getData', (req, res) => {
   models.NpReport.findAll().then(result => res.json(result))
   console.log(result)
